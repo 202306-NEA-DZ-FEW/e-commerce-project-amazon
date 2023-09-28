@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react"
 // import ProductCard from "@/Components/ProductCard/ProductCard";
 import Link from "next/link"
 
-export default function HomePL() {
-  const [products, setProducts] = useState([])
+export default function HomePL({ products }) {
+  // const [products, setProducts] = useState([])
 
-  useEffect(() => {
-    async function getProductsList() {
-      const res = await fetch("https://fakestoreapi.com/products?limit=15")
-      setProducts(await res.json())
-    }
-    getProductsList()
-  }, [])
-
+  // useEffect(() => {
+  //   async function getProductsList() {
+  //     const res = await fetch("https://fakestoreapi.com/products?limit=15")
+  //     setProducts(await res.json())
+  //   }
+  //   getProductsList()
+  // }, [])
+  console.log(products)
   return (
     <div>
       <div className="flex flex-col space-y-4 items-center justify-center mt-5">
