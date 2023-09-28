@@ -29,6 +29,7 @@ const CartProvider = ({ children }) => {
     //check if item is already in cart
     const cartItem = cart.find(item => {
       return item.id === id
+      
     })
 
     //if cartItem is already in cart

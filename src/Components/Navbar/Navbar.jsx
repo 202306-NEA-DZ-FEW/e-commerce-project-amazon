@@ -23,8 +23,8 @@ const Navbar = () => {
           <li className="inline-block px-4 hover:text-red-700"><Link href={"/"}>men's clothing</Link></li>
           <li className="inline-block px-4 hover:text-red-700"><Link href={"/"}>women's clothing</Link></li>
           <li className="inline-block px-4 hover:text-red-700"><Link href={"/"}>jewlery</Link></li>
-          <li className="inline-block px-4 hover:text-red-700 relative">TESTING
-            <ul className="opacity-0 group-hover:opacity-100 absolute bg-blue-500 top-10"><DropDown/></ul>
+          <li className="inline-block px-4 hover:text-red-700 relative"><DropDown/>
+            {/* <ul className="opacity-0 group-hover:opacity-100 absolute bg-blue-500 top-10"><DropDown/></ul> */}
             </li>
           <li className="inline-block px-4"><Link href={"/"}>
           <div className='cursor-pointer flex relative'>
