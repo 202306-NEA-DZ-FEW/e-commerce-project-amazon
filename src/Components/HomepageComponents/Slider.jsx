@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import Link from "next/link"
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
 import { RxDotFilled } from "react-icons/rx"
 
@@ -41,6 +42,17 @@ export default function Slider() {
     setCurrentIndex(slideIndex)
   }
 
+  // Auto-play functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide()
+    }, 5000) // Auto-play every 5 seconds (5000 milliseconds)
+
+    return () => {
+      clearInterval(interval) // Clear the interval when the component unmounts
+    }
+  }, [currentIndex])
+
   return (
     <div className="max-w-[1400px] h-[780px] w-full m-auto py-4 px-4 relative group">
       <div
@@ -58,12 +70,14 @@ export default function Slider() {
 
           {/* More from this category button */}
           <div className="flex items-center justify-center">
-            <button
-              className="border-2 py-2 px-2 rounded-full bg-sky-500/100 hover:bg-orange-700"
-              onClick={() => console.log("More from this category clicked!")}
-            >
-              More from this category !
-            </button>
+            <Link href="#category_url">
+              <button
+                className="border-2 py-2 px-2 rounded-full bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+                onClick={() => console.log("More from this category clicked!")}
+              >
+                More from this category !
+              </button>
+            </Link>
           </div>
         </div>
       </div>
