@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Slider from "@/Components/HomepageComponents/Slider"
-import ProductItem from "../Components/ProductCard/ProductItem"
+import ProductCard from "../Components/ProductCard/ProductICard"
 
 export default function Home({ products }) {
   console.log(products)
@@ -13,7 +13,7 @@ export default function Home({ products }) {
       <Slider />
       <div className="grid grid-cols-1 mt-4 mx-4 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
-          <ProductItem key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </>
