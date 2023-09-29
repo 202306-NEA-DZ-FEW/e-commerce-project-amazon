@@ -1,8 +1,9 @@
 import Head from "next/head"
 import Slider from "@/Components/HomepageComponents/Slider"
-import HomePageProduct from "@/Components/HomepageComponents/HomePL"
+import ProductItem from "../Components/ProductItem"
 
 export default function Home({ products }) {
+  console.log(products)
   return (
     <>
       <Head>
@@ -10,7 +11,11 @@ export default function Home({ products }) {
       </Head>
       <h1> Hello Amazon Team </h1>
       <Slider />
-      <HomePageProduct products={products} />
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+        {products.map((product) => (
+          <ProductItem key={product.id} products={products} />
+        ))}
+      </div>
     </>
   )
 }
