@@ -1,38 +1,40 @@
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
 
+export default function index({ category }) {
+  const slides = [
+    {
+      image:
+        "https://images.unsplash.com/photo-1528141603775-81fd11f61682?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      category: "electronics",
+      //   path: `/Product/categories/${}`
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      category: "jewelery",
+      //   path:`/Product/categories/${}`
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      category: "men's clothing",
+      //   path:`/Product/categories/${}`
+    },
 
+    {
+      image:
+        "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
+      category: "women's clothing",
+      //   path:`/Product/categories/${}`
+    },
+  ]
 
-export default function index({category}) {
-    const slides = [
-        {
-          image: "https://images.unsplash.com/photo-1528141603775-81fd11f61682?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-          category: "electronics",
-        //   path: `/Product/categories/${}`
-        },
-        {
-          image: "https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-          category: "jewelery",
-        //   path:`/Product/categories/${}`
-        },
-        {
-          image: "https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-          category: "men's clothing",
-        //   path:`/Product/categories/${}`
-        },
-    
-        {
-          image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
-          category: "women's clothing",
-        //   path:`/Product/categories/${}`
-        },
-      ]
-
-      const coverDisplay = () => {
-        if (slides.category === category) {
-            const imageToDisplay = slides.image
-        }
-      }
+  const coverDisplay = () => {
+    if (slides.category === category) {
+      const imageToDisplay = slides.image
+    }
+  }
 
   return (
     <div className="max-w-[1400px] h-[780px] w-full m-auto py-4 px-4 relative group">
@@ -48,23 +50,20 @@ export default function index({category}) {
               {`${slides[currentIndex].category}`}
             </h2>
           </div>
-
-
         </div>
-      </div>   
       </div>
+    </div>
   )
 }
 
 export async function getStaticProps() {
-    const res = await fetch("https://fakestoreapi.com/products?limit=15")
-    const products = await res.json()
-    console.log(products)
-    return {
-      props: {
-        products,
-      },
-      revalidate: 60,
-    }
+  const res = await fetch("https://fakestoreapi.com/products?limit=15")
+  const products = await res.json()
+  console.log(products)
+  return {
+    props: {
+      products,
+    },
+    revalidate: 60,
   }
-  
+}
