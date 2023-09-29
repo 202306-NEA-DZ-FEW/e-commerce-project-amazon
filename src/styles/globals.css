@@ -9,6 +9,11 @@
   @apply mb-5  block   rounded-lg border border-gray-200  shadow-md;
 }
 
-.primary-button {
-  @apply rounded bg-amber-300 py-2 px-4 shadow outline-none hover:bg-amber-400  active:bg-amber-500;
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Ensures that whitespace is preserved */
 }
