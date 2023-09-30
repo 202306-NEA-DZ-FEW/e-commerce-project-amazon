@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from "react"
 
 export const CartContext = createContext()
 
@@ -27,14 +27,13 @@ const CartProvider = ({ children }) => {
     const newItem = { ...product, amount: 1 }
 
     //check if item is already in cart
-    const cartItem = cart.find(item => {
+    const cartItem = cart.find((item) => {
       return item.id === id
-      
     })
 
     //if cartItem is already in cart
     if (cartItem) {
-      const newCart = [...cart].map(item => {
+      const newCart = [...cart].map((item) => {
         if (item.id === id) {
           return { ...item, amount: cartItem.amount + 1 }
         } else {
@@ -47,8 +46,8 @@ const CartProvider = ({ children }) => {
     }
   }
 
-  const removeFromCart = id => {
-    const newCart = cart.filter(item => {
+  const removeFromCart = (id) => {
+    const newCart = cart.filter((item) => {
       return item.id !== id
     })
     setCart(newCart)
@@ -58,15 +57,15 @@ const CartProvider = ({ children }) => {
     setCart([])
   }
 
-  const increaseAmount = id => {
-    const cartItem = cart.find(item => item.id === id)
+  const increaseAmount = (id) => {
+    const cartItem = cart.find((item) => item.id === id)
     addToCart(id, cartItem)
   }
 
-  const decreaseAmount = id => {
-    const cartItem = cart.find(item => item.id === id)
+  const decreaseAmount = (id) => {
+    const cartItem = cart.find((item) => item.id === id)
     if (cartItem) {
-      const newCart = cart.map(item => {
+      const newCart = cart.map((item) => {
         if (item.id === id) {
           return { ...item, amount: cartItem.amount - 1 }
         } else {
