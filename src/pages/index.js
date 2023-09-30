@@ -8,7 +8,7 @@ export default function Home({ products }) {
       <Head>
         <title>AmaZD by Amazon Team</title>
       </Head>
-      <h1> Hello Amazon Team </h1>
+     
       <Slider />
       <HomePageProduct products={products} />
     </>
@@ -18,7 +18,7 @@ export default function Home({ products }) {
 export async function getStaticProps() {
   const res = await fetch("https://fakestoreapi.com/products?limit=15")
   const products = await res.json()
-  console.log(products)
+ 
   return {
     props: {
       products,

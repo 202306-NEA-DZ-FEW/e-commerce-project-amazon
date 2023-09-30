@@ -73,7 +73,7 @@ export default function Slider() {
             <Link href="#category_url">
               <button
                 className="border-2 py-2 px-2 rounded-full bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
-                onClick={() => console.log("More from this category clicked!")}
+                
               >
                 More from this category !
               </button>
