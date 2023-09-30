@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 const DropDown = () => {
-  const [open, setOpen] = useState(false);
-  
+  const [open, setOpen] = useState(false)
+
   return (
     <div className="relative">
       <button onClick={()=>setOpen(!open)}>Categories</button>
