@@ -1,17 +1,17 @@
 import Head from "next/head"
 import dynamic from "next/dynamic"
-import ProductCardDetailsPlaceHolder from "@/components/SingleProductPage/ProductCardDetails/ProductCardDetailsPlaceHolder"
-import ProductImagePlaceHolder from "@/components/SingleProductPage/ProductImage/ProductImagePlaceHolder"
+import ProductCardDetailsPlaceHolder from "@/components/SingleProductComponents/ProductCardDetails/ProductCardDetailsPlaceHolder"
+import ProductImagePlaceHolder from "@/components/SingleProductComponents/ProductImage/ProductImagePlaceHolder"
 import { getProductById } from "@/lib/utils/fetchApi"
 
 const ProductImage = dynamic(
-  () => import("@/components/SingleProductPage/ProductImage"),
+  () => import("@/components/SingleProductComponents/ProductImage"),
   {
     loading: () => <ProductImagePlaceHolder />,
   },
 )
 const ProductCardDetails = dynamic(
-  () => import("@/components/SingleProductPage/ProductCardDetails"),
+  () => import("@/components/SingleProductComponents/ProductCardDetails"),
   {
     loading: () => <ProductCardDetailsPlaceHolder />,
   },

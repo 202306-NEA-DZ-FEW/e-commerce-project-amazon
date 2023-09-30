@@ -25,7 +25,7 @@ export default function HomePL({ products }) {
         <div className="grid md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-1 gap-2">
           {products.map((product) => (
             <div className="border-2" key={product.id}>
-              <Link href={`/Products/${product.id}`}>
+              <Link href={`/products/${product.id}`}>
                 <img
                   src={product.image}
                   alt={product.title}
