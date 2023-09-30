@@ -10,7 +10,7 @@ export default function Home({ products }) {
       <Head>
         <title>AmaZD by Amazon Team</title>
       </Head>
-      <h1> Hello Amazon Team </h1>
+     
       <Slider />
       <div className="grid grid-cols-1 mt-4 mx-4 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
