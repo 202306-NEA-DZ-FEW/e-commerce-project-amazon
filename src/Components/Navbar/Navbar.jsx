@@ -55,8 +55,8 @@ const Navbar = () => {
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
               <a href="/categories/electronics"> electronics</a>
             </div>
-            <div className="cursor-pointer flex relative">                   
-              <BsBag className="text-2xl" />
+            <div className="cursor-pointer flex relative " href="/shopcart">                  
+              <BsBag className="text-2xl"  />
               <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items center">
                 {itemAmount}
               </div> 
