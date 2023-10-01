@@ -8,8 +8,10 @@ import ProductCard from "@/Components/ProductCard/ProductICard"
 
 export default function Category({ products }) {
 
+  
+  const category = products[0].category;
 
-  const slideCat = slides.find((slide) => slides.category === products.category);
+  const slideCat = slides.find((slide) => slide.category === category);
 
   return (
     <div>
@@ -22,7 +24,7 @@ export default function Category({ products }) {
             {/* Category name */}
             <div className="flex items-center justify-center  bg-black/40 border-y-4 w-full">
               <h2 className="text-3xl font-bold text-white p-4 ">
-                {products.category}
+                {category}
               </h2>
             </div>
           </div>
