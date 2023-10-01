@@ -4,7 +4,7 @@ import React from "react"
 export default function ProductCard({ product }) {
   return (
     <div className="card relative mt-4 hover:bg-red-200" key={product.id}>
-      <Link href={`/Products/${product.id}`}>
+      <Link href={`/products/${product.id}`}>
         <div className="flex flex-col items-center justify-center">
           <img
             src={product.image}
