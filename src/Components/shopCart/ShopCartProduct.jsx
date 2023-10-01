@@ -28,8 +28,8 @@ const ShopCartProduct = ({ product, setCart, setTotal }) => {
           <div className="font-bold">
             <p>{product.title}</p>
           </div>
-          <div className="text-sm lg:w-4/5">
-            <p>{product.description}</p>
+          <div className="text-sm lg:w-4/5 ">
+            <p className="text-ellipsis overflow-hidden h-32">{product.description}</p>
           </div>
         </div>
       </div>
