@@ -7,8 +7,8 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false)
-  const { itemAmount } = useContext(CartContext)
-  
+  const { storage } = useContext(CartContext)
+
 
   return (
     <nav className=" relative">
@@ -38,29 +38,28 @@ const Navbar = () => {
           )}
         </div>
         <div
-          className={`${
-            isOpen ? "flex" : "hidden"
-          } mt-5  relative lg:flex flex-col space-y-10 lg:space-y-0 w-full h-full items-start justify-around lg:justify-end lg:flex-row`}
+          className={`${isOpen ? "flex" : "hidden"
+            } mt-5  relative lg:flex flex-col space-y-10 lg:space-y-0 w-full h-full items-start justify-around lg:justify-end lg:flex-row`}
         >
           <div className="flex flex-col space-y-2 md:space-y-0 lg:flex-row items-start">
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/men's clothing"> men's clothing</a>
+              <Link href="/categories/men's clothing"> men's clothing</Link>
             </div>
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/women's clothing">women's clothing</a>
+              <Link href="/categories/women's clothing">women's clothing</Link>
             </div>
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/jewelery"> jewelery</a>
+              <Link href="/categories/jewelery"> jewelery</Link>
             </div>
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/electronics"> electronics</a>
+              <Link href="/categories/electronics"> electronics</Link>
             </div>
-            <div className="cursor-pointer flex relative " href="/shopcart">                  
-              <BsBag className="text-2xl"  />
+            <div className="cursor-pointer flex relative " href="/shopcart">
+              <BsBag className="text-2xl" />
               <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items center">
-                {itemAmount}
-              </div> 
+                {storage.length}
               </div>
+            </div>
           </div>
         </div>
       </div>

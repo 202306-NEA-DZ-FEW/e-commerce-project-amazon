@@ -4,11 +4,11 @@ import {
   slides
 } from "@/lib/constants"
 import { fetchApi } from "@/lib/utils/fetchApi"
-import ProductCard from "@/Components/ProductCard/ProductICard"
+import ProductCard from "@/Components/productCard/ProductICard"
 
 export default function Category({ products }) {
 
-  
+
   const category = products[0].category;
 
   const slideCat = slides.find((slide) => slide.category === category);

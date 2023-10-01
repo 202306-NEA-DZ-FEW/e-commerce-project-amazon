@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ProductCard from "@/Components/ProductCard/ProductICard"
+import ProductCard from "@/Components/productCard/ProductICard"
 import { FaStar } from "react-icons/fa"
 
 export default function Filter({ products, categories }) {
@@ -10,13 +10,13 @@ export default function Filter({ products, categories }) {
     category: "",
     rating: null,
   })
-  
+
   // to keep up with the stars the
   const [highlightedStars, setHighlightedStars] = useState([]);
 
   //  maximum rating value
   const maxRating = 5;
-  
+
   // Function to toggle the highlighted stars
   const toggleHighlightedStars = (rating) => {
     if (rating === filterOptions.rating) {
@@ -35,13 +35,13 @@ export default function Filter({ products, categories }) {
     const { name, minPrice, maxPrice, category, rating } = filterOptions;
 
 
-  const handleStarHover = (rating) => {
-    setHighlightedStars([...Array(rating).keys()]);
-  };
+    const handleStarHover = (rating) => {
+      setHighlightedStars([...Array(rating).keys()]);
+    };
 
-  const handleStarLeave = () => {
-    setHighlightedStars([]);
-  };
+    const handleStarLeave = () => {
+      setHighlightedStars([]);
+    };
 
     // Filter by name
     if (name && !product.title.toLowerCase().includes(name.toLowerCase())) {
@@ -82,7 +82,7 @@ export default function Filter({ products, categories }) {
       <nav className="grid grid-cols-1 mt-4 mx-4 gap-auto lg:grid-cols-5">
         {/* Filter by name */}
         <div className="container border hover:bg-red-200 p-5 ">
-        <label>Search:</label>
+          <label>Search:</label>
           <input
             placeholder="Search a product name"
             name="name"
@@ -139,10 +139,9 @@ export default function Filter({ products, categories }) {
             {[1, 2, 3, 4, 5].map((rating) => (
               <FaStar
                 key={rating}
-                onClick={() => toggleHighlightedStars(rating)}            
-                className={`cursor-pointer text-2xl ${
-                  highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
-                }`}
+                onClick={() => toggleHighlightedStars(rating)}
+                className={`cursor-pointer text-2xl ${highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
+                  }`}
               />
             ))}
           </div>

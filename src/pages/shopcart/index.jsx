@@ -1,19 +1,20 @@
 import useLocalStorage from "@/lib/hooks/useLocalStorage"
 import ShopCartProduct from "@/Components/shopCart/ShopCartProduct"
-import { useEffect, useState } from "react"
-
+import { useEffect, useState, useContext } from "react"
+import { CartContext } from "@/contexts/CartContext"
 const ShopCart = () => {
-  const [cart, setCart] = useLocalStorage("product", [])
+  const { storage, setStorage } = useContext(CartContext)
+
   const [total, setTotal] = useState(0)
   const [isClient, setIsClient] = useState(false)
   useEffect(() => {
     setIsClient(true)
     let sum = 0
-    cart.forEach((product) => {
+    storage.forEach((product) => {
       sum += product.price
     })
     setTotal(sum)
-  }, [cart])
+  }, [storage])
 
   return (
     <div className=" mx-auto pt-24">
@@ -22,13 +23,13 @@ const ShopCart = () => {
       </h1>
       {isClient && (
         <ShopCartTable total={total}>
-          {cart.length > 0 ? (
-            cart.map((product) => {
+          {storage.length > 0 ? (
+            storage.map((product) => {
               return (
                 <ShopCartProduct
                   product={product}
                   key={product.id}
-                  setCart={setCart}
+                  setCart={setStorage}
                   setTotal={setTotal}
                 />
               )
