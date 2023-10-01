@@ -5,7 +5,7 @@ import Filter from "@/Components/Filter/Filter"
 import { fetchApi } from "@/lib/utils/fetchApi"
 import { GET_ALL_CATEGORIES, GET_ALL_PRODUCTS } from "@/lib/constants"
 
-export default function Home({ products }) {
+export default function Home({ products, categories }) {
   return (
     <>
       <Head>
@@ -14,7 +14,7 @@ export default function Home({ products }) {
      
       <Slider />
       <div className="my-4 p-4">
-      <Filter products={products} />
+      <Filter products={products} categories={categories}/>
       </div>
 
 
