@@ -14,8 +14,9 @@ const ShopCart = () => {
     })
     setTotal(sum)
   }, [cart])
+
   return (
-    <div className="container mx-auto">
+    <div className=" mx-auto pt-24">
       <h1 className="text-center text-4xl font-semibold mb-10">
         Shopping Cart
       </h1>
@@ -54,8 +55,8 @@ const ShopCart = () => {
 const ShopCartTable = ({ children, total }) => {
   return (
     <div className="flex flex-col">
-      <div className="w-4/5 mx-auto flex flex-col">
-        <div className="flex px-2 py-3 border-b-2 ">
+      <div className="lg:w-4/5 w-[90%] mx-auto flex flex-col">
+        <div className="lg:flex px-2 py-3 border-b-2 hidden ">
           <div className="w-[40%]">Product</div>
           <div className="w-[18%]">Price</div>
           <div className="w-[18%]">Quantity</div>
