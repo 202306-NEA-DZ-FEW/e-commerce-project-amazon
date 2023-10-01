@@ -19,7 +19,7 @@ const ProductCardDetails = ({ product }) => {
       <p className="text-gray-500  ">
         <span className="text-xl font-bold ml-3">Catygory : </span>
         <mark className="bg-yellow-200 p-1 pt-0 text-gray-500 font-medium">
-          <Link href={"/"}>{product.category}</Link>
+          <Link href={`/categories/${product.category}`}>{product.category}</Link>
         </mark>
       </p>
       <div className="flex justify-between items-center mt-4">
