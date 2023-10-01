@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Link from "next/link";
 import AmazonLogo from "../AmazonLogo";
 import { BsBag } from "react-icons/bs";
@@ -7,9 +7,12 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false)
-  const { itemAmount } = useContext(CartContext)
-  
+  const { storage } = useContext(CartContext)
+  const [isClient, setIsClient] = useState(false)
 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
   return (
     <nav className=" relative">
       <div className="flex flex-col lg:flex-row h-full items-center justify-between p-4">
@@ -38,29 +41,31 @@ const Navbar = () => {
           )}
         </div>
         <div
-          className={`${
-            isOpen ? "flex" : "hidden"
-          } mt-5  relative lg:flex flex-col space-y-10 lg:space-y-0 w-full h-full items-start justify-around lg:justify-end lg:flex-row`}
+          className={`${isOpen ? "flex" : "hidden"
+            } mt-5  relative lg:flex flex-col space-y-10 lg:space-y-0 w-full h-full items-start justify-around lg:justify-end lg:flex-row`}
         >
           <div className="flex flex-col space-y-2 md:space-y-0 lg:flex-row items-start">
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/men's clothing"> men's clothing</a>
+              <Link href="/categories/men's clothing"> men&apos; clothing</Link>
             </div>
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/women's clothing">women's clothing</a>
+              <Link href="/categories/women's clothing">women&apos; clothing</Link>
             </div>
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/jewelery"> jewelery</a>
+              <Link href="/categories/jewelery"> jewelery</Link>
             </div>
             <div className="text-l lg:mx-7 lg:text-link font-medium hover:text-red-700">
-              <a href="/categories/electronics"> electronics</a>
+              <Link href="/categories/electronics"> electronics</Link>
             </div>
-            <div className="cursor-pointer flex relative " href="/shopcart">                  
-              <BsBag className="text-2xl"  />
-              <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items center">
-                {itemAmount}
-              </div> 
+            <Link href="/shopcart">
+              <div className="cursor-pointer flex relative " >
+                <BsBag className="text-2xl" />
+                <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items center">
+                  {isClient && storage.length}
+                </div>
               </div>
+            </Link>
+
           </div>
         </div>
       </div>
