@@ -1,18 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CartContext } from "@/contexts/CartContext"
 
 export default function ProductCard({ product }) {
-  const { setStorage } = useContext(CartContext)
+  const { setStorage, storage } = useContext(CartContext)
+  const [notification, setNotification] = useState(false)
 
   const handleAddToCart = (product) => {
-    // console.log([...prev, product])
     setStorage((prev) => [...prev, product])
+    setNotification(true)
   }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setNotification(false)
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [notification])
   return (
-    <div className="card relative mt-4 hover:bg-red-200" key={product.id}>
-      <Link href={`/products/${product.id}`}>
+    <div className=" relative mt-4 flex flex-col items-center justify-between lg-w-[1/4] box-border p-2 rounded-lg border border-gray-300">
+
+      <Link href={`/products/${product.id}`} className="relative w-full">
         <div className="flex flex-col items-center justify-center">
           <img
             src={product.image}
@@ -28,15 +36,24 @@ export default function ProductCard({ product }) {
             <p>${product.price}</p>
           </div>
 
-          <div className="flex items-center justify-center mb-5">
-            <button
-              onClick={() => handleAddToCart(product)}
-              className="p-5 rounded bg-amber-200 py-2 px-4 shadow outline-none hover:bg-amber-600 active:bg-amber-500">
-              Add to cart
-            </button>
-          </div>
+
         </div>
+
+        {notification &&
+          <div className="absolute transition-transform  left-1/2 -translate-x-1/2 top-0 w-[90%] text-center  bg-red-300 px-4 py-2 opacity-75 text-red-900 rounded-lg font-semibold">
+            Added to the cart
+          </div>
+        }
+
       </Link>
+      <div className="flex items-center justify-center mb-5">
+        <button
+          onClick={() => handleAddToCart(product)}
+          className="p-5 rounded-lg bg-black  text-white font-semibold py-2 px-4 shadow outline-none hover:bg-gray-600 active:bg-amber-500">
+          Add to cart
+        </button>
+
+      </div>
     </div>
   )
 }
