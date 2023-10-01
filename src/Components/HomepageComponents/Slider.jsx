@@ -54,7 +54,7 @@ export default function Slider() {
           <div className="flex items-center justify-center">
             <Link href={`/categories/${slides[currentIndex].category}`}>
               <span
-                className="border-2 py-2 px-2 rounded-full bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"
+                className="border-2 py-2 px-2 rounded-full bg-red-200 hover:bg-red-400 active:bg-red-800 focus:outline-none focus:ring focus:ring-violet-300"
 
               >
                 More from this category !
