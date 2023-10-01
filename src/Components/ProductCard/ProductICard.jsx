@@ -7,7 +7,6 @@ export default function ProductCard({ product }) {
   const { setStorage } = useContext(CartContext)
 
   const handleAddToCart = (product) => {
-    // console.log([...prev, product])
     setStorage((prev) => [...prev, product])
   }
   return (

@@ -2,6 +2,7 @@ import useLocalStorage from "@/lib/hooks/useLocalStorage"
 import ShopCartProduct from "@/Components/shopCart/ShopCartProduct"
 import { useEffect, useState, useContext } from "react"
 import { CartContext } from "@/contexts/CartContext"
+import Head from "next/head"
 const ShopCart = () => {
   const { storage, setStorage } = useContext(CartContext)
 
@@ -55,21 +56,27 @@ const ShopCart = () => {
 
 const ShopCartTable = ({ children, total }) => {
   return (
-    <div className="flex flex-col">
-      <div className="lg:w-4/5 w-[90%] mx-auto flex flex-col">
-        <div className="lg:flex px-2 py-3 border-b-2 hidden ">
-          <div className="w-[40%]">Product</div>
-          <div className="w-[18%]">Price</div>
-          <div className="w-[18%]">Quantity</div>
-          <div className="w-[18%]">Total</div>
-        </div>
-        {children}
-        <div className="flex justify-end gap-5 px-4 pt-5 pb-2">
-          <div className="text-xl ">Total</div>
-          <div className="text-xl font-bold">${total.toFixed(2)}</div>
+    <>
+      <Head>
+        <title>Shop Cart | AmaZD</title>
+        <meta name="description" content="shopping cart" />
+      </Head>
+      <div className="flex flex-col">
+        <div className="lg:w-4/5 w-[90%] mx-auto flex flex-col">
+          <div className="lg:flex px-2 py-3 border-b-2 hidden ">
+            <div className="w-[40%]">Product</div>
+            <div className="w-[18%]">Price</div>
+            <div className="w-[18%]">Quantity</div>
+            <div className="w-[18%]">Total</div>
+          </div>
+          {children}
+          <div className="flex justify-end gap-5 px-4 pt-5 pb-2">
+            <div className="text-xl ">Total</div>
+            <div className="text-xl font-bold">${total.toFixed(2)}</div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
