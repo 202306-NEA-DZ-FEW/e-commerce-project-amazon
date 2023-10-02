@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.brd {
+  border: 1px solid red;
+}
+.card {
+  @apply mb-5  block   rounded-lg border border-gray-200  shadow-md;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Ensures that whitespace is preserved */
+}
+
+.nav-grantita {
+  background: linear-gradient(
+    90deg,
+    #fecaca 0%,
+    transparent 17%,
+    #fecaca 33%,
+    #f87171 50%,
+    #fecaca 76%,
+    transparent 83%,
+    #fecaca 100%
+  );
+}
+
+.footer-grantita {
+  background: linear-gradient(
+    90deg,
+    #f87171 0%,
+    #fecaca 25%,
+    transparent 50%,
+    #fecaca 75%,
+    #f87171 100%
+  );
+}
