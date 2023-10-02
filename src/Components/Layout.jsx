@@ -1,4 +1,4 @@
-import Navbar from "../Components/Navbar/Navbar";
+import Navbar from "./navbar/Navbar";
 import { fetchApi } from "@/lib/utils/fetchApi";
 import { GET_ALL_CATEGORIES } from "@/lib/constants";
 import Footer from "./footer/Footer";

@@ -11,7 +11,7 @@ const ProductImage = dynamic(
   },
 );
 const ProductCardDetails = dynamic(
-  () => import("@/components/singleProductComponents/ProductCardDetails"),
+  () => import("@/components/singleProductComponents/productCardDetails"),
   {
     loading: () => <ProductCardDetailsPlaceHolder />,
   },
