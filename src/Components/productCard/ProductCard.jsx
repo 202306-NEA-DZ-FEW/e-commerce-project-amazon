@@ -1,22 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link"
-import { useContext, useEffect, useState } from "react"
-import { CartContext } from "@/contexts/CartContext"
+import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "@/contexts/CartContext";
 
 export default function ProductCard({ product }) {
-  const { setStorage, storage } = useContext(CartContext)
-  const [notification, setNotification] = useState(false)
+  const { setStorage, storage } = useContext(CartContext);
+  const [notification, setNotification] = useState(false);
 
   const handleAddToCart = (product) => {
-    setStorage((prev) => [...prev, product])
-    setNotification(true)
-  }
+    setStorage((prev) => [...prev, product]);
+    setNotification(true);
+  };
   useEffect(() => {
     const timer = setTimeout(() => {
-      setNotification(false)
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [notification])
+      setNotification(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [notification]);
   return (
     <div className=" relative mt-4 flex flex-col items-center justify-between lg-w-[1/4] box-border p-2 rounded-lg border border-gray-300">
       <Link href={`/products/${product.id}`} className="relative w-full">
@@ -51,5 +51,5 @@ export default function ProductCard({ product }) {
         </button>
       </div>
     </div>
-  )
+  );
 }

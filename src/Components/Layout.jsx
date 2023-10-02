@@ -1,7 +1,7 @@
-import Navbar from "../Components/Navbar/Navbar"
-import { fetchApi } from "@/lib/utils/fetchApi"
-import { GET_ALL_CATEGORIES } from "@/lib/constants"
-import Footer from "./Footer/Footer"
+import Navbar from "../Components/Navbar/Navbar";
+import { fetchApi } from "@/lib/utils/fetchApi";
+import { GET_ALL_CATEGORIES } from "@/lib/constants";
+import Footer from "./footer/Footer";
 export default function Layout({ children }) {
   return (
     <div className="w-fit-screen">
@@ -9,5 +9,5 @@ export default function Layout({ children }) {
       {children}
       <Footer />
     </div>
-  )
+  );
 }

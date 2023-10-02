@@ -1,23 +1,23 @@
-import Image from "next/image"
-import { useState } from "react"
-import { AiOutlineDelete } from "react-icons/ai"
+import Image from "next/image";
+import { useState } from "react";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const ShopCartProduct = ({ product, setCart, setTotal }) => {
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
   const handleRemove = () => {
-    setCart((prev) => prev.filter((item) => item.id !== product.id))
-  }
+    setCart((prev) => prev.filter((item) => item.id !== product.id));
+  };
 
   const handleAdd = () => {
-    setQuantity(quantity + 1)
-    setTotal((prev) => prev + product.price)
-  }
+    setQuantity(quantity + 1);
+    setTotal((prev) => prev + product.price);
+  };
   const handleMinus = () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1)
-      setTotal((prev) => prev - product.price)
+      setQuantity(quantity - 1);
+      setTotal((prev) => prev - product.price);
     }
-  }
+  };
   return (
     <div className="flex flex-col lg:flex-row lg:px-2 py-3 border-b-2 ">
       <div className="lg:w-[40%]  flex  flex-row gap-2">
@@ -72,7 +72,7 @@ const ShopCartProduct = ({ product, setCart, setTotal }) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ShopCartProduct
+export default ShopCartProduct;

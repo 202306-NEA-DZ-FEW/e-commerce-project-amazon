@@ -1,5 +1,5 @@
-import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai"
-import Image from "next/image"
+import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
+import Image from "next/image";
 // import Men from "../../assets/Men.svg";
 
 const members = [
@@ -45,7 +45,7 @@ const members = [
     linkedin: "https://www.linkedin.com",
     src: "/assets/team/hadia.jpeg",
   },
-]
+];
 const Footer = () => {
   return (
     <footer className="bg-darkgray  mt-24">
@@ -99,10 +99,10 @@ const Footer = () => {
         AmaZD MADE WITH PASSION ❤️ BY THE AMAZON SQUAD.
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
 
 /*const Footer = () => {
   const cards = [

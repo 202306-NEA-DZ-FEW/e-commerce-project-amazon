@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const DropDown = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="relative">
@@ -13,7 +13,7 @@ const DropDown = () => {
         <h1>electronics</h1>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DropDown
+export default DropDown;

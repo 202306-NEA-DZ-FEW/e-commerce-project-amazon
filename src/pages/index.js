@@ -1,9 +1,9 @@
-import Head from "next/head"
-import Slider from "@/components/homepageComponents/Slider"
-import Filter from "@/components/filter/Filter"
+import Head from "next/head";
+import Slider from "@/components/homepageComponents/Slider";
+import Filter from "@/components/filter/Filter";
 
-import { fetchApi } from "@/lib/utils/fetchApi"
-import { GET_ALL_CATEGORIES, GET_ALL_PRODUCTS } from "@/lib/constants"
+import { fetchApi } from "@/lib/utils/fetchApi";
+import { GET_ALL_CATEGORIES, GET_ALL_PRODUCTS } from "@/lib/constants";
 
 export default function Home({ products, categories }) {
   return (
@@ -17,17 +17,17 @@ export default function Home({ products, categories }) {
         <Filter products={products} categories={categories} />
       </div>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const products = await fetchApi(GET_ALL_PRODUCTS)
-  const categories = await fetchApi(GET_ALL_CATEGORIES)
+  const products = await fetchApi(GET_ALL_PRODUCTS);
+  const categories = await fetchApi(GET_ALL_CATEGORIES);
   return {
     props: {
       products,
       categories,
     },
     revalidate: 60,
-  }
+  };
 }

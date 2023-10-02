@@ -24,7 +24,7 @@ const slides = [
     category: "women's clothing",
     //   path:`/Product/categories/${}`
   },
-]
+];
 
 export default function index({ category }) {
   return (
@@ -44,16 +44,16 @@ export default function index({ category }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://fakestoreapi.com/products?limit=15")
-  const products = await res.json()
+  const res = await fetch("https://fakestoreapi.com/products?limit=15");
+  const products = await res.json();
   return {
     props: {
       products,
     },
     revalidate: 60,
-  }
+  };
 }

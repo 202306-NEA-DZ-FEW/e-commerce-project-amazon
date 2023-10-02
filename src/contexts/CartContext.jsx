@@ -1,10 +1,10 @@
-import useLocalStorage from "@/lib/hooks/useLocalStorage"
-import { createContext, useState, useEffect } from "react"
+import useLocalStorage from "@/lib/hooks/useLocalStorage";
+import { createContext, useState, useEffect } from "react";
 
-export const CartContext = createContext()
+export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const [storage, setStorage] = useLocalStorage("products")
+  const [storage, setStorage] = useLocalStorage("products");
 
   return (
     <CartContext.Provider
@@ -15,7 +15,7 @@ const CartProvider = ({ children }) => {
     >
       {children}
     </CartContext.Provider>
-  )
-}
+  );
+};
 
-export default CartProvider
+export default CartProvider;

@@ -1,23 +1,23 @@
-import { getStaticProps } from "@/pages"
-import { BsFillStarFill } from "react-icons/bs"
-import Link from "next/link"
-import { useContext, useState, useEffect } from "react"
-import { CartContext } from "@/contexts/CartContext"
+import { getStaticProps } from "@/pages";
+import { BsFillStarFill } from "react-icons/bs";
+import Link from "next/link";
+import { useContext, useState, useEffect } from "react";
+import { CartContext } from "@/contexts/CartContext";
 
 const ProductCardDetails = ({ product }) => {
-  const { setStorage, storage } = useContext(CartContext)
-  const [notification, setNotification] = useState(false)
+  const { setStorage, storage } = useContext(CartContext);
+  const [notification, setNotification] = useState(false);
 
   const handleAddToCart = (product) => {
-    setStorage((prev) => [...prev, product])
-    setNotification(true)
-  }
+    setStorage((prev) => [...prev, product]);
+    setNotification(true);
+  };
   useEffect(() => {
     const timer = setTimeout(() => {
-      setNotification(false)
-    }, 3000)
-    return () => clearTimeout(timer)
-  })
+      setNotification(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  });
   return (
     <div className="lg:cols-span-3 md:col-span-4 bg-gray-100 rounded-lg shadow-lg p-6">
       <h1 className="text-2xl font-bold text-gray-800">{product.title}</h1>
@@ -58,7 +58,7 @@ const ProductCardDetails = ({ product }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCardDetails
+export default ProductCardDetails;

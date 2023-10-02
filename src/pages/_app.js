@@ -1,6 +1,6 @@
-import "@/styles/globals.css"
-import Layout from "@/components/Layout"
-import CartProvider from "@/contexts/CartContext"
+import "@/styles/globals.css";
+import Layout from "@/components/Layout";
+import CartProvider from "@/contexts/CartContext";
 export default function App({ Component, pageProps }) {
   return (
     <CartProvider>
@@ -8,5 +8,5 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </Layout>
     </CartProvider>
-  )
+  );
 }

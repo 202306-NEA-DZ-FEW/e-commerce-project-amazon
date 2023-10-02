@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const AmazonLogo = () => {
   return (
@@ -6,7 +6,7 @@ const AmazonLogo = () => {
       {" "}
       <Image src={"/assets/logo.png"} alt="Logo" width={120} height={80} />
     </div>
-  )
-}
+  );
+};
 
-export default AmazonLogo
+export default AmazonLogo;

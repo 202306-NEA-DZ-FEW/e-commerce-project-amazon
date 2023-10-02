@@ -1,20 +1,20 @@
-import ShopCartProduct from "@/components/shopCart/ShopCartProduct"
-import { useEffect, useState, useContext } from "react"
-import { CartContext } from "@/contexts/CartContext"
-import Head from "next/head"
+import ShopCartProduct from "@/components/shopCart/ShopCartProduct";
+import { useEffect, useState, useContext } from "react";
+import { CartContext } from "@/contexts/CartContext";
+import Head from "next/head";
 const ShopCart = () => {
-  const { storage, setStorage } = useContext(CartContext)
+  const { storage, setStorage } = useContext(CartContext);
 
-  const [total, setTotal] = useState(0)
-  const [isClient, setIsClient] = useState(false)
+  const [total, setTotal] = useState(0);
+  const [isClient, setIsClient] = useState(false);
   useEffect(() => {
-    setIsClient(true)
-    let sum = 0
+    setIsClient(true);
+    let sum = 0;
     storage.forEach((product) => {
-      sum += product.price
-    })
-    setTotal(sum)
-  }, [storage])
+      sum += product.price;
+    });
+    setTotal(sum);
+  }, [storage]);
 
   return (
     <div className=" mx-auto pt-24">
@@ -32,7 +32,7 @@ const ShopCart = () => {
                   setCart={setStorage}
                   setTotal={setTotal}
                 />
-              )
+              );
             })
           ) : (
             <span className="text-xl font-thin text-center p-10 w-full ">
@@ -50,8 +50,8 @@ const ShopCart = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const ShopCartTable = ({ children, total }) => {
   return (
@@ -76,7 +76,7 @@ const ShopCartTable = ({ children, total }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ShopCart
+export default ShopCart;

@@ -1,18 +1,18 @@
-import { useState, useContext, useEffect } from "react"
-import Link from "next/link"
-import AmazonLogo from "../AmazonLogo"
-import { BsBag } from "react-icons/bs"
-import { CartContext } from "@/contexts/CartContext"
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
+import { useState, useContext, useEffect } from "react";
+import Link from "next/link";
+import AmazonLogo from "../AmazonLogo";
+import { BsBag } from "react-icons/bs";
+import { CartContext } from "@/contexts/CartContext";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
-  const [isOpen, setisOpen] = useState(false)
-  const { storage } = useContext(CartContext)
-  const [isClient, setIsClient] = useState(false)
+  const [isOpen, setisOpen] = useState(false);
+  const { storage } = useContext(CartContext);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
   return (
     <nav className=" sticky top-0 z-10 nav-grantita">
       <div className="flex flex-col lg:flex-row h-full text-center align-middle align-items-center justify-around p-4">
@@ -26,7 +26,7 @@ const Navbar = () => {
             <div
               className=" w-10 cursor-pointer md:border lg:hidden flex-col-reverse"
               onClick={() => {
-                setisOpen(false)
+                setisOpen(false);
               }}
             >
               <AiOutlineClose className="text-2xl" />
@@ -75,6 +75,6 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
-export default Navbar
+  );
+};
+export default Navbar;

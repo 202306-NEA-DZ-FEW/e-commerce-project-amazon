@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import ProductCard from "@/components/productCard/ProductCard"
-import { FaStar } from "react-icons/fa"
+import React, { useState } from "react";
+import ProductCard from "@/components/productCard/ProductCard";
+import { FaStar } from "react-icons/fa";
 
 export default function Filter({ products, categories }) {
   const [filterOptions, setFilterOptions] = useState({
@@ -9,72 +9,72 @@ export default function Filter({ products, categories }) {
     maxPrice: "",
     category: "",
     rating: null,
-  })
+  });
 
   // to keep up with the stars the
-  const [highlightedStars, setHighlightedStars] = useState([])
+  const [highlightedStars, setHighlightedStars] = useState([]);
 
   //  maximum rating value
-  const maxRating = 5
+  const maxRating = 5;
 
   // Function to toggle the highlighted stars
   const toggleHighlightedStars = (rating) => {
     if (rating === filterOptions.rating) {
       // If the rating is already selected, clear the selection
-      setFilterOptions({ ...filterOptions, rating: null })
-      setHighlightedStars([])
+      setFilterOptions({ ...filterOptions, rating: null });
+      setHighlightedStars([]);
     } else {
       // Set the selected rating and highlight the corresponding stars
-      setFilterOptions({ ...filterOptions, rating })
-      setHighlightedStars([...Array(rating).keys()])
+      setFilterOptions({ ...filterOptions, rating });
+      setHighlightedStars([...Array(rating).keys()]);
     }
-  }
+  };
 
   // Filter the products based on filterOptions
   const filteredProducts = products.filter((product) => {
-    const { name, minPrice, maxPrice, category, rating } = filterOptions
+    const { name, minPrice, maxPrice, category, rating } = filterOptions;
 
     const handleStarHover = (rating) => {
-      setHighlightedStars([...Array(rating).keys()])
-    }
+      setHighlightedStars([...Array(rating).keys()]);
+    };
 
     const handleStarLeave = () => {
-      setHighlightedStars([])
-    }
+      setHighlightedStars([]);
+    };
 
     // Filter by name
     if (name && !product.title.toLowerCase().includes(name.toLowerCase())) {
-      return false
+      return false;
     }
 
     // Filter by minPrice
     if (minPrice && parseFloat(product.price) < parseFloat(minPrice)) {
-      return false
+      return false;
     }
 
     // Filter by maxPrice
     if (maxPrice && parseFloat(product.price) > parseFloat(maxPrice)) {
-      return false
+      return false;
     }
 
     // Filter by category
     if (category && product.category.toLowerCase() !== category.toLowerCase()) {
-      return false
+      return false;
     }
 
     // Filter by rating
     if (rating !== null && parseFloat(product.rating) < parseFloat(rating)) {
-      return false
+      return false;
     }
 
-    return true
-  })
+    return true;
+  });
 
   // Handle input changes for all filters
   const handleInputChange = (e) => {
-    const { name, value } = e.target
-    setFilterOptions({ ...filterOptions, [name]: value })
-  }
+    const { name, value } = e.target;
+    setFilterOptions({ ...filterOptions, [name]: value });
+  };
 
   return (
     <div className="mt-8">
@@ -141,8 +141,9 @@ export default function Filter({ products, categories }) {
               <FaStar
                 key={rating}
                 onClick={() => toggleHighlightedStars(rating)}
-                className={`cursor-pointer text-2xl ${highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
-                  }`}
+                className={`cursor-pointer text-2xl ${
+                  highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
+                }`}
               />
             ))}
           </div>
@@ -156,5 +157,5 @@ export default function Filter({ products, categories }) {
         ))}
       </div>
     </div>
-  )
+  );
 }
