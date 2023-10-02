@@ -78,28 +78,28 @@ export default function Filter({ products, categories }) {
   };
 
   return (
-    <div>
-      <nav className="grid grid-cols-1 mt-4 mx-4 gap-auto lg:grid-cols-5">
+    <div className="mt-8">
+      <nav className="grid grid-cols-1 mt-4 gap-auto lg:grid-cols-5 bg-gradient-to-r from-red-400 via-red-500 to-red-400">
         {/* Filter by name */}
-        <div className="container border hover:bg-red-200 p-5 ">
-          <label>Search:</label>
+        <div className="flex-row items-center hover:bg-red-200 p-5 ">
+          <label className="text-center font-semibold rounded-lg">Search:</label>
           <input
-            placeholder="Search a product name"
+            placeholder="Looking for a product ?"
             name="name"
             value={filterOptions.name}
             onChange={handleInputChange}
-            className="object-contain justify-center "
+            className="object-contain border-solid border-2 rounded-lg flex row justify-center italic "
           />
         </div>
 
         {/* Filter by category */}
-        <div className="p-5 border  hover:bg-red-200 flex-wrap">
-          <label>Category:</label>
+        <div className="p-5 flex-row items-center hover:bg-red-200 flex-wrap">
+          <label className="font-semibold flex-row p-2">Category:</label>
           <select
             name="category"
             value={filterOptions.category}
             onChange={handleInputChange}
-            className="object-contain justify-center"
+            className="object-contain justify-center rounded-lg"
           >
             <option value="">Select Category</option>
             {categories.map((category) => (
@@ -111,29 +111,29 @@ export default function Filter({ products, categories }) {
         </div>
 
         {/* Filter by price min */}
-        <div className="p-5 border  hover:bg-red-200 flex-wrap">
-          <label>Minimum Price:</label>
+        <div className="p-5 flex items-center hover:bg-red-200 flex-wrap">
+          <label className="font-semibold flex-row p-2">Minimum Price:</label>
           <input
             type="number"
             name="minPrice"
             value={filterOptions.minPrice}
             onChange={handleInputChange}
-            className="object-contain justify-center"
+            className="w-20 rounded-lg"
           />
         </div>
         {/* Filter by price max */}
-        <div className="p-5 border flex items-center hover:bg-red-200 flex-wrap">
-          <label>Maximum Price:</label>
+        <div className="p-5 flex items-center hover:bg-red-200 flex-wrap">
+          <label className="font-semibold flex-row p-2">Maximum Price:</label>
           <input
             type="number"
             name="maxPrice"
             value={filterOptions.maxPrice}
             onChange={handleInputChange}
-            className="mx-2"
+            className="w-20 rounded-lg"
           />
         </div>
         {/* Filter by rating */}
-        <div className="p-5 border flex-wrap  hover:bg-red-200">
+        <div className="p-5 flex-wrap  hover:bg-red-200">
           <label>Minimum Rating:</label>
           <div className="flex items-center mx-2">
             {[1, 2, 3, 4, 5].map((rating) => (

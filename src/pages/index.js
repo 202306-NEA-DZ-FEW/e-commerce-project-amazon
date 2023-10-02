@@ -14,7 +14,7 @@ export default function Home({ products, categories }) {
       </Head>
 
       <Slider />
-      <div className="my-4 p-4">
+      <div >
         <Filter products={products} categories={categories} />
       </div>
 

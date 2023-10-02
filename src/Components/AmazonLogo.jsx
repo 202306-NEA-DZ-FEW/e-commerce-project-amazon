@@ -4,7 +4,7 @@ const AmazonLogo = () => {
   return (
     <div>
       {" "}
-      <Image src={"/assets/logo.svg"} alt="Logo" width={120} height={80} />
+      <Image src={"/assets/logo.png"} alt="Logo" width={120} height={80} />
     </div>
   )
 }

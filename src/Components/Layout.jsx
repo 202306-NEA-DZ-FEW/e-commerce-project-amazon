@@ -4,7 +4,7 @@ import { GET_ALL_CATEGORIES } from "@/lib/constants"
 import Footer from "./Footer/Footer"
 export default function Layout({ children }) {
   return (
-    <div className="container mx-auto">
+    <div className="w-fit-screen">
       <Navbar />
       {children}
       <Footer/>

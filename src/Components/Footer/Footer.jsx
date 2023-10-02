@@ -36,7 +36,7 @@ const members = [
     name: "MERIEM MANSOURI",
     github: "https://github.com/meryem08",
     linkedin: "https://github.com/meryem08",
-    src: "/assets/team/hadia.jpeg",
+    src: "/assets/team/Meriem.jpg",
   },
   {
     id: 6,
@@ -49,10 +49,13 @@ const members = [
 const Footer = () => {
   return (
     <footer className="bg-darkgray  mt-24">
-      <div className="  ">
+      <div className=" footer-grantita p-4 ">
+        <div className=" flex flex-row items-center justify-center">
+          <Image src="/assets/ReCoded.png" width={250} height={100} alt="Organization"/>
+        </div>
         <ul className="flex-col flex items-center lg:flex-row justify-between w-full">
           {members.map((member) => (
-            <div className="mt-24  flex flex-col items-center  " key={member.id}>
+            <div className="mt-10  flex flex-col items-center  " key={member.id}>
               <Image
                 src={member.src}
                 width={100}
@@ -75,7 +78,7 @@ const Footer = () => {
       <div
         className="w-full p-4 text-center"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >MADE WITH LOVE ❤️ BY THE AmaZD SQUAD.</div>
+      >AmaZD MADE WITH PASSION ❤️ BY THE AMAZON SQUAD.</div>
     </footer>
   );
 };

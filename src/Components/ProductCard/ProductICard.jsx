@@ -49,7 +49,7 @@ export default function ProductCard({ product }) {
       <div className="flex items-center justify-center mb-5">
         <button
           onClick={() => handleAddToCart(product)}
-          className="p-5 rounded-lg bg-black  text-white font-semibold py-2 px-4 shadow outline-none hover:bg-gray-600 active:bg-amber-500">
+          className="p-5 rounded-lg bg-black  text-white font-semibold py-2 px-4 shadow outline-none hover:bg-red-400 active:bg-red-800">
           Add to cart
         </button>
 
