@@ -1,18 +1,16 @@
 import {
   GET_PRODUCTS_BY_CATEGORY,
   GET_ALL_CATEGORIES,
-  slides
+  slides,
 } from "@/lib/constants"
 import { fetchApi } from "@/lib/utils/fetchApi"
 import ProductCard from "@/Components/productCard/ProductICard"
-import Head from "next/head";
+import Head from "next/head"
 
 export default function Category({ products }) {
+  const category = products[0].category
 
-
-  const category = products[0].category;
-
-  const slideCat = slides.find((slide) => slide.category === category);
+  const slideCat = slides.find((slide) => slide.category === category)
 
   return (
     <>
@@ -64,7 +62,7 @@ export async function getStaticPaths() {
 
   // Generate an array of objects with 'params' property for dynamic paths
   const paths = categories.map((category) => ({
-    params: { id: category }, // 
+    params: { id: category }, //
   }))
 
   return {

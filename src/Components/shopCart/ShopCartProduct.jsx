@@ -22,14 +22,22 @@ const ShopCartProduct = ({ product, setCart, setTotal }) => {
     <div className="flex flex-col lg:flex-row lg:px-2 py-3 border-b-2 ">
       <div className="lg:w-[40%]  flex  flex-row gap-2">
         <div className=" border border-gray-300 lg:w-fit w-1/2  p-2 rounded-lg flex">
-          <Image src={product.image} alt="product" width={100} height={100} className="self-center mx-auto" />
+          <Image
+            src={product.image}
+            alt="product"
+            width={100}
+            height={100}
+            className="self-center mx-auto"
+          />
         </div>
         <div className="w-2/3">
           <div className="font-bold">
             <p>{product.title}</p>
           </div>
           <div className="text-sm lg:w-4/5 ">
-            <p className="text-ellipsis overflow-hidden h-32">{product.description}</p>
+            <p className="text-ellipsis overflow-hidden h-32">
+              {product.description}
+            </p>
           </div>
         </div>
       </div>

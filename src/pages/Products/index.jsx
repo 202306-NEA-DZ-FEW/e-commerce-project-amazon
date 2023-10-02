@@ -27,8 +27,6 @@ const slides = [
 ]
 
 export default function index({ category }) {
-
-
   return (
     <div className="max-w-[1400px] h-[780px] w-full m-auto py-4 px-4 relative group">
       <div
@@ -59,4 +57,3 @@ export async function getStaticProps() {
     revalidate: 60,
   }
 }
-

@@ -19,11 +19,25 @@
 }
 
 .nav-grantita {
-  background: linear-gradient(90deg, #fecaca 0%, transparent 17%, #fecaca 33%, #f87171 50%, #fecaca 76%, transparent 83%, #fecaca 100%);
-
+  background: linear-gradient(
+    90deg,
+    #fecaca 0%,
+    transparent 17%,
+    #fecaca 33%,
+    #f87171 50%,
+    #fecaca 76%,
+    transparent 83%,
+    #fecaca 100%
+  );
 }
 
 .footer-grantita {
-  background: linear-gradient(90deg, #f87171 0%,   #fecaca 25%,  transparent 50%, #fecaca 75%,  #f87171 100%);
-
+  background: linear-gradient(
+    90deg,
+    #f87171 0%,
+    #fecaca 25%,
+    transparent 50%,
+    #fecaca 75%,
+    #f87171 100%
+  );
 }

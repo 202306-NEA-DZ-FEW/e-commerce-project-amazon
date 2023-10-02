@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div className="w-fit-screen">
       <Navbar />
       {children}
-      <Footer/>
+      <Footer />
     </div>
   )
 }
