@@ -1,38 +1,42 @@
-import React, { useState, useEffect } from "react"
-import Link from "next/link"
-import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
-import { RxDotFilled } from "react-icons/rx"
-import { slides } from "@/lib/constants/index"
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RxDotFilled } from "react-icons/rx";
+import { slides } from "@/lib/constants/index";
 
 export default function Slider() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
-    setCurrentIndex(newIndex)
-  }
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1
-    const newIndex = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(newIndex)
-  }
+    let isLastSlide;
+    if (slides.length) {
+      isLastSlide = currentIndex === slides.length - 1;
+    }
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex)
-  }
+    setCurrentIndex(slideIndex);
+  };
 
   // Auto-play functionality
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide()
-    }, 5000) // Auto-play every 5 seconds (5000 milliseconds)
+      nextSlide();
+    }, 5000); // Auto-play every 5 seconds (5000 milliseconds)
 
     return () => {
-      clearInterval(interval) // Clear the interval when the component unmounts
-    }
-  }, [currentIndex])
+      clearInterval(interval); // Clear the interval when the component unmounts
+    };
+  }, [currentIndex]);
 
   return (
     <div className="max-w-[1400px] h-[780px] w-full m-auto py-4 px-4 relative group">
@@ -79,5 +83,5 @@ export default function Slider() {
         ))}
       </div>
     </div>
-  )
+  );
 }

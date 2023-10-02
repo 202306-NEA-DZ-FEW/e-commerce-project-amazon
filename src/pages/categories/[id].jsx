@@ -1,24 +1,22 @@
 import {
   GET_PRODUCTS_BY_CATEGORY,
   GET_ALL_CATEGORIES,
-  slides
-} from "@/lib/constants"
-import { fetchApi } from "@/lib/utils/fetchApi"
-import ProductCard from "@/Components/productCard/ProductICard"
+  slides,
+} from "@/lib/constants";
+import { fetchApi } from "@/lib/utils/fetchApi";
+import ProductCard from "@/components/productCard/ProductCard";
 import Head from "next/head";
 
 export default function Category({ products }) {
-
-
-  const category = products[0].category;
+  const { category } = products[0];
 
   const slideCat = slides.find((slide) => slide.category === category);
 
   return (
     <>
       <Head>
-        <title>{category} | AmaZD</title>
-        <meta name="description" content="shopping cart" />
+        <title>{category}</title>
+        <meta name="description" content="products" />
       </Head>
       <div>
         <div className="max-w-[1400px] h-[780px] w-full m-auto py-4 px-4 relative group">
@@ -45,30 +43,30 @@ export default function Category({ products }) {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export async function getStaticProps({ params }) {
-  const products = await fetchApi(GET_PRODUCTS_BY_CATEGORY + params.id)
+  const products = await fetchApi(GET_PRODUCTS_BY_CATEGORY + params.id);
 
   return {
     props: {
       products,
     },
     revalidate: 60,
-  }
+  };
 }
 
 export async function getStaticPaths() {
-  const categories = await fetchApi(GET_ALL_CATEGORIES)
+  const categories = await fetchApi(GET_ALL_CATEGORIES);
 
   // Generate an array of objects with 'params' property for dynamic paths
   const paths = categories.map((category) => ({
-    params: { id: category }, // 
-  }))
+    params: { id: category }, //
+  }));
 
   return {
     paths,
     fallback: false,
-  }
+  };
 }

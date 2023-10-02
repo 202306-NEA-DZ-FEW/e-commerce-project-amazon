@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function ProductCardDetailsPlaceHolder() {
   return (
@@ -24,7 +24,7 @@ function ProductCardDetailsPlaceHolder() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default ProductCardDetailsPlaceHolder
+export default ProductCardDetailsPlaceHolder;

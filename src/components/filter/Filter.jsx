@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import ProductCard from "@/Components/productCard/ProductICard"
-import { FaStar } from "react-icons/fa"
+import React, { useState } from "react";
+import ProductCard from "@/components/productCard/ProductCard";
+import { FaStar } from "react-icons/fa";
 
 export default function Filter({ products, categories }) {
   const [filterOptions, setFilterOptions] = useState({
@@ -9,7 +9,7 @@ export default function Filter({ products, categories }) {
     maxPrice: "",
     category: "",
     rating: null,
-  })
+  });
 
   // to keep up with the stars the
   const [highlightedStars, setHighlightedStars] = useState([]);
@@ -33,7 +33,6 @@ export default function Filter({ products, categories }) {
   // Filter the products based on filterOptions
   const filteredProducts = products.filter((product) => {
     const { name, minPrice, maxPrice, category, rating } = filterOptions;
-
 
     const handleStarHover = (rating) => {
       setHighlightedStars([...Array(rating).keys()]);
@@ -82,7 +81,9 @@ export default function Filter({ products, categories }) {
       <nav className="grid grid-cols-1 mt-4 gap-auto lg:grid-cols-5 bg-gradient-to-r from-red-400 via-red-500 to-red-400">
         {/* Filter by name */}
         <div className="flex-row items-center hover:bg-red-200 p-5 ">
-          <label className="text-center font-semibold rounded-lg">Search:</label>
+          <label className="text-center font-semibold rounded-lg">
+            Search:
+          </label>
           <input
             placeholder="Looking for a product ?"
             name="name"
@@ -140,8 +141,9 @@ export default function Filter({ products, categories }) {
               <FaStar
                 key={rating}
                 onClick={() => toggleHighlightedStars(rating)}
-                className={`cursor-pointer text-2xl ${highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
-                  }`}
+                className={`cursor-pointer text-2xl ${
+                  highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
+                }`}
               />
             ))}
           </div>
@@ -155,5 +157,5 @@ export default function Filter({ products, categories }) {
         ))}
       </div>
     </div>
-  )
+  );
 }

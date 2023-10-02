@@ -1,21 +1,23 @@
-import Head from "next/head"
-import dynamic from "next/dynamic"
-import ProductCardDetailsPlaceHolder from "@/components/SingleProductComponents/ProductCardDetails/ProductCardDetailsPlaceHolder"
-import ProductImagePlaceHolder from "@/components/SingleProductComponents/ProductImage/ProductImagePlaceHolder"
-import { getProductById } from "@/lib/utils/fetchApi"
+
+import Head from "next/head";
+import dynamic from "next/dynamic";
+import ProductCardDetailsPlaceHolder from "@/components/singleProductComponents/productCardDetails/ProductCardDetailsPlaceHolder";
+import ProductImagePlaceHolder from "@/components/singleProductComponents/productImage/ProductImagePlaceHolder";
+import { getProductById } from "@/lib/utils/fetchApi";
 
 const ProductImage = dynamic(
-  () => import("@/components/SingleProductComponents/ProductImage"),
+  () => import("@/components/singleProductComponents/productImage"),
   {
     loading: () => <ProductImagePlaceHolder />,
   },
-)
+);
 const ProductCardDetails = dynamic(
-  () => import("@/components/SingleProductComponents/ProductCardDetails"),
+  () => import("@/components/singleProductComponents/productCardDetails"),
   {
     loading: () => <ProductCardDetailsPlaceHolder />,
   },
-)
+);
+
 
 function ProductDetails({ product }) {
   return (
@@ -29,17 +31,20 @@ function ProductDetails({ product }) {
         <ProductCardDetails product={product} />
       </main>
     </>
-  )
+  );
 }
 
-export default ProductDetails
+export default ProductDetails;
 
 export async function getServerSideProps(context) {
-  const { productId } = context.query
-  const product = await getProductById(productId)
+  const { productId } = context.query;
+  const product = await getProductById(productId);
   return {
     props: {
       product,
     },
-  }
+
+  };
 }
+
+

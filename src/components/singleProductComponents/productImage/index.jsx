@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 
 function ProductImage({ product }) {
   return (
@@ -14,7 +14,7 @@ function ProductImage({ product }) {
 
       <div className="absolute bottom-0 w-full h-[0%] bg-gradient-to-t from-black opacity-10 to-transparent z-10"></div>
     </div>
-  )
+  );
 }
 
-export default ProductImage
+export default ProductImage;

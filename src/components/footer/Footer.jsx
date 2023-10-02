@@ -45,30 +45,47 @@ const members = [
     linkedin: "https://www.linkedin.com",
     src: "/assets/team/hadia.jpeg",
   },
-]
+];
 const Footer = () => {
   return (
     <footer className="bg-darkgray  mt-24">
       <div className=" footer-grantita p-4 ">
         <div className=" flex flex-row items-center justify-center">
-          <Image src="/assets/ReCoded.png" width={250} height={100} alt="Organization"/>
+          <Image
+            src="/assets/ReCoded.png"
+            width={250}
+            height={100}
+            alt="Organization"
+          />
         </div>
         <ul className="flex-col flex items-center lg:flex-row justify-between w-full">
           {members.map((member) => (
-            <div className="mt-10  flex flex-col items-center  " key={member.id}>
+            <div
+              className="mt-10  flex flex-col items-center  "
+              key={member.id}
+            >
               <Image
                 src={member.src}
                 width={100}
                 height={100}
                 alt="Illustration"
-                className="w-40 lg:w-20  rounded-lg bg-cover transform filter  transition-all duration-300 ease-in-out hover:filter-blur-0" />
+                className="w-40 lg:w-20  rounded-lg bg-cover transform filter  transition-all duration-300 ease-in-out hover:filter-blur-0"
+              />
 
-              <li key={member.name} className=" flex-row items-center justify-center  ">
-
-                <h3 className=" text-1xl mb-1 text-center my-5 font-semibold">{member.name}</h3>
+              <li
+                key={member.name}
+                className=" flex-row items-center justify-center  "
+              >
+                <h3 className=" text-1xl mb-1 text-center my-5 font-semibold">
+                  {member.name}
+                </h3>
                 <div className="flex justify-center gap-4 mt-5">
-                  <a href={member.github} target="_blank"><AiFillGithub className="text-3xl cursor-pointer" /></a>
-                  <a href={member.linkedin} target="_blank"><AiOutlineLinkedin className="text-3xl cursor-pointer" /></a>
+                  <a href={member.github} target="_blank">
+                    <AiFillGithub className="text-3xl cursor-pointer" />
+                  </a>
+                  <a href={member.linkedin} target="_blank">
+                    <AiOutlineLinkedin className="text-3xl cursor-pointer" />
+                  </a>
                 </div>
               </li>
             </div>
@@ -78,24 +95,14 @@ const Footer = () => {
       <div
         className="w-full p-4 text-center"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >AmaZD MADE WITH PASSION ❤️ BY THE AMAZON SQUAD.</div>
+      >
+        AmaZD MADE WITH PASSION ❤️ BY THE AMAZON SQUAD.
+      </div>
     </footer>
   );
 };
 
 export default Footer;
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*const Footer = () => {
   const cards = [
@@ -163,5 +170,3 @@ export default Footer;
 
 export default Footer;
  */
-
-
