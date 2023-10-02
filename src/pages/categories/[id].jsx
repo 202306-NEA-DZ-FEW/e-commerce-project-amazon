@@ -4,19 +4,19 @@ import {
   slides,
 } from "@/lib/constants"
 import { fetchApi } from "@/lib/utils/fetchApi"
-import ProductCard from "@/Components/productCard/ProductICard"
+import ProductCard from "@/components/productCard/ProductCard"
 import Head from "next/head"
 
 export default function Category({ products }) {
-  const category = products[0].category
+  const { category } = products[0]
 
   const slideCat = slides.find((slide) => slide.category === category)
 
   return (
     <>
       <Head>
-        <title>{category} | AmaZD</title>
-        <meta name="description" content="shopping cart" />
+        <title>{category}</title>
+        <meta name="description" content="products" />
       </Head>
       <div>
         <div className="max-w-[1400px] h-[780px] w-full m-auto py-4 px-4 relative group">

@@ -1,5 +1,4 @@
-import useLocalStorage from "@/lib/hooks/useLocalStorage"
-import ShopCartProduct from "@/Components/shopCart/ShopCartProduct"
+import ShopCartProduct from "@/components/shopCart/ShopCartProduct"
 import { useEffect, useState, useContext } from "react"
 import { CartContext } from "@/contexts/CartContext"
 import Head from "next/head"

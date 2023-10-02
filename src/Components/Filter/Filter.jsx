@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ProductCard from "@/Components/productCard/ProductICard"
+import ProductCard from "@/components/productCard/ProductCard"
 import { FaStar } from "react-icons/fa"
 
 export default function Filter({ products, categories }) {
@@ -141,9 +141,8 @@ export default function Filter({ products, categories }) {
               <FaStar
                 key={rating}
                 onClick={() => toggleHighlightedStars(rating)}
-                className={`cursor-pointer text-2xl ${
-                  highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
-                }`}
+                className={`cursor-pointer text-2xl ${highlightedStars.includes(rating - 1) ? "text-yellow-500" : ""
+                  }`}
               />
             ))}
           </div>

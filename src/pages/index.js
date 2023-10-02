@@ -1,6 +1,6 @@
 import Head from "next/head"
-import Slider from "@/Components/HomepageComponents/Slider"
-import Filter from "@/Components/Filter/Filter"
+import Slider from "@/components/homepageComponents/Slider"
+import Filter from "@/components/filter/Filter"
 
 import { fetchApi } from "@/lib/utils/fetchApi"
 import { GET_ALL_CATEGORIES, GET_ALL_PRODUCTS } from "@/lib/constants"
