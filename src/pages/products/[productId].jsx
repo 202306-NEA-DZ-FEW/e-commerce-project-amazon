@@ -1,3 +1,4 @@
+
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import ProductCardDetailsPlaceHolder from "@/components/singleProductComponents/productCardDetails/ProductCardDetailsPlaceHolder";
@@ -16,6 +17,7 @@ const ProductCardDetails = dynamic(
     loading: () => <ProductCardDetailsPlaceHolder />,
   },
 );
+
 
 function ProductDetails({ product }) {
   return (
@@ -41,5 +43,8 @@ export async function getServerSideProps(context) {
     props: {
       product,
     },
+
   };
 }
+
+
