@@ -3,8 +3,6 @@ import ProductCardDetails from "@/Components/SingleProductComponents/ProductCard
 import ProductImage from "@/Components/SingleProductComponents/ProductImage"
 import { getProductById } from "@/lib/utils/fetchApi"
 
-
-
 function ProductDetails({ product }) {
   return (
     <>
