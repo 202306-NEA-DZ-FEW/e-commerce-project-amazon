@@ -15,7 +15,7 @@ export default function Slider() {
   };
 
   const nextSlide = () => {
-    let isLastSlide
+    let isLastSlide;
     if (slides.length) {
       isLastSlide = currentIndex === slides.length - 1;
     }
