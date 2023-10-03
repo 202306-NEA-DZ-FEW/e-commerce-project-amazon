@@ -4,6 +4,7 @@ import AmazonLogo from "../AmazonLogo";
 import { BsBag } from "react-icons/bs";
 import { CartContext } from "@/contexts/CartContext";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg"
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
@@ -65,12 +66,17 @@ const Navbar = () => {
             </div>
             <Link href="/shopcart">
               <div className="cursor-pointer flex relative ">
-                <BsBag className="text-2xl hover:font-bold " />
+                <BsBag className="text-2xl " />
                 <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items center">
                   {isClient && storage.length}
                 </div>
               </div>
             </Link>
+            <div className="text-l lg:mx-7 lg:text-link hover:text-red-700 hover:font-bold ">
+              <Link href="/authentification">
+                <CgProfile  className="text-3xl"/>
+              </Link>
+            </div>          
           </div>
         </div>
       </div>

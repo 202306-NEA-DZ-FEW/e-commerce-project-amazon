@@ -56,6 +56,7 @@ const Footer = () => {
             width={250}
             height={100}
             alt="Organization"
+            priority={false}
           />
         </div>
         <ul className="flex-col flex items-center lg:flex-row justify-between w-full">
