@@ -4,6 +4,7 @@ import AmazonLogo from "../AmazonLogo";
 import { BsBag } from "react-icons/bs";
 import { CartContext } from "@/contexts/CartContext";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg"
 
 const Navbar = () => {
   const [isOpen, setisOpen] = useState(false);
@@ -43,7 +44,7 @@ const Navbar = () => {
         <div
           className={`${
             isOpen ? "flex space-x-4" : "hidden"
-          } mt-5  relative lg:flex flex-col space-y-8 lg:space-y-0 w-full h-full items-center justify-between lg:justify-end lg:flex-row`}
+          } mt-5  relative lg:flex flex-col space-y-8 lg:space-y-3 w-full h-full items-center justify-between lg:justify-end lg:flex-row`}
         >
           <div className="flex flex-col space-y-2 items-center md:space-y-0 lg:flex-row ">
             <div className="text-l text-center lg:mx-7 lg:text-link font-medium hover:text-red-700 hover:font-bold ">
@@ -65,12 +66,17 @@ const Navbar = () => {
             </div>
             <Link href="/shopcart">
               <div className="cursor-pointer flex relative ">
-                <BsBag className="text-2xl hover:font-bold " />
+                <BsBag className="text-2xl " />
                 <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items center">
                   {isClient && storage.length}
                 </div>
               </div>
             </Link>
+            <div className="text-l lg:mx-7 lg:text-link hover:text-red-700 hover:font-bold ">
+              <Link href="/authentification">
+                <CgProfile  className="text-3xl"/>
+              </Link>
+            </div>          
           </div>
         </div>
       </div>
