@@ -44,7 +44,7 @@ const Navbar = () => {
         <div
           className={`${
             isOpen ? "flex space-x-4" : "hidden"
-          } mt-5  relative lg:flex flex-col space-y-8 lg:space-y-0 w-full h-full items-center justify-between lg:justify-end lg:flex-row`}
+          } mt-5  relative lg:flex flex-col space-y-8 lg:space-y-3 w-full h-full items-center justify-between lg:justify-end lg:flex-row`}
         >
           <div className="flex flex-col space-y-2 items-center md:space-y-0 lg:flex-row ">
             <div className="text-l text-center lg:mx-7 lg:text-link font-medium hover:text-red-700 hover:font-bold ">
