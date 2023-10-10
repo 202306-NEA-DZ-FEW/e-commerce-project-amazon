@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD7JlA6ypbAngSgF30ykJ6xDkQuIlnw3rg",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "amazd-demo.firebaseapp.com",
   projectId: "amazd-demo",
   storageBucket: "amazd-demo.appspot.com",
