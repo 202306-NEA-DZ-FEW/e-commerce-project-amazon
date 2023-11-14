@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AmaZD Squad</title>
+    <style>
+      body {
+        zoom: 0.8;
+
+        margin: 0;
+        overflow: hidden;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+        background: #000;
+      }
+
+      .strip {
+        position: absolute;
+        height: 100vh;
+        background: #fff;
+        width: 0.0625rem;
+        opacity: 0.3;
+      }
+
+      .one {
+        left: 25%;
+      }
+
+      .two {
+        left: 50%;
+      }
+
+      .three {
+        left: 75%;
+      }
+
+      .container {
+        align-items: flex-start;
+        display: flex;
+        justify-content: center;
+        padding: 16.875rem 1.5rem;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-column-gap: 1.5rem;
+        max-width: 75rem;
+        width: 100%;
+      }
+
+      @media (min-width: 75rem) {
+        .card-grid {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+
+      .card {
+        position: relative;
+      }
+
+      .card::before {
+        content: "";
+        display: block;
+        padding-bottom: 150%;
+      }
+
+      .card-background {
+        background-size: cover;
+        background-position: center;
+        border-radius: 0.9375rem;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition:
+          filter 0.2s linear,
+          transform 200ms linear;
+      }
+
+      .card:hover .card-background {
+        transform: scale(1.25) translateZ(0);
+      }
+
+      .card-grid:hover > .card:not(:hover) .card-background {
+        filter: brightness(1) saturate(0) contrast(1) blur(1.25rem);
+      }
+
+      .card-content {
+        padding: 14.375rem 1.25rem;
+        position: absolute;
+        top: 0;
+      }
+
+      .card-category {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+
+      .card-heading {
+        color: black;
+        font-size: 1.9rem;
+        text-shadow: 0.125rem 0.125rem 1.25rem rgba(0, 0, 0, 0.2);
+      }
+      p {
+        margin-top: -1.875rem;
+      }
+
+      .containerA img {
+        max-width: 100%;
+        height: auto;
+        width: 100px;
+      }
+      .containerA img {
+        position: absolute;
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body zoom="0.8">
+    <div class="containerA">
+      <a href="https://www.linkedin.com/in/abdelhakimtiabi/" target="_blank"
+        ><img src="logo2.png" alt="Uncle_Hakim"
+      /></a>
+    </div>
+
+    <div>
+      <div class="strip one"></div>
+      <div class="strip two"></div>
+      <div class="strip three"></div>
+    </div>
+
+    <section class="container">
+      <div class="card-grid">
+        <a
+          href="https://www.linkedin.com/in/hachem-bouhadede/"
+          target="_blank"
+          class="card"
+        >
+          <div
+            class="card-background"
+            style="background-image: url(hachem.jpeg)"
+          ></div>
+          <span class="card-content">
+            <h3 class="card-heading">Hachem Bouhadede</h3>
+            <p class="card-category">FEW Dev : Next.js & React</p>
+          </span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ismailbenlaredj/"
+          target="_blank"
+          class="card"
+        >
+          <div
+            class="card-background"
+            style="background-image: url(Ismail.jpeg)"
+          ></div>
+          <span class="card-content">
+            <h3 class="card-heading">Ismail Benlaredj</h3>
+            <p class="card-category">Front End, React Engineer</p>
+          </span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/hadia-djadallah/"
+          target="_blank"
+          class="card"
+        >
+          <div
+            class="card-background"
+            style="background-image: url(hadia.jpeg)"
+          ></div>
+          <span class="card-content">
+            <h3 class="card-heading">Hadia Djaballah</h3>
+            <p class="card-category">Frontend Web Developer</p>
+          </span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/meriem-mansouri-1b1643276/"
+          target="_blank"
+          class="card"
+        >
+          <div
+            class="card-background"
+            style="background-image: url(avatar.png)"
+          ></div>
+          <span class="card-content">
+            <h3 class="card-heading">Meriem Mansouri</h3>
+            <p class="card-category">Frontend Web Developer</p>
+          </span>
+        </a>
+
+        <a href="https://github.com/dalilia" target="_blank" class="card">
+          <div
+            class="card-background"
+            style="background-image: url(avatar_2.jpg)"
+          ></div>
+          <span class="card-content">
+            <h3 class="card-heading">Dalila Meguenni</h3>
+            <p class="card-category">Frontend Web Developer</p>
+          </span>
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
